@@ -106,9 +106,7 @@ Parametros sao obrigatórios para exibir os locais proximos, caso um dos paramet
 	
  	5. Listar todos os POIs cadastrados.
 
-### ================================================== ##
 ### Estrutura da aplicação
-### ================================================== ##
 Os pacotes na aplicacao seguiu padroes do MVC, que na camada do View foi usado
 o angularJS que implementa o paradigma Model-View-Whatever
 
