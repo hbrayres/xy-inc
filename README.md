@@ -2,18 +2,16 @@
 ## xy-inc
 Repositorio para desenvolvimento de aplicação para ZUP IT Innovation
 
-### ================================================== ##
 ### Download aplicacao
-### ================================================== ##
+
 Execute em linha de comando
 
 	$ git clone https://github.com/hbrayres/xy-inc.git
 
 	$ git pull
 
-### ================================================== ##
 ### Execucao da aplicação
-### ================================================== ##
+
 acesse a pasta da aplicacao
  
 	$ cd pontointeresse
@@ -28,9 +26,8 @@ depois execute standalone.bat(win)/.sh(linux) o jboss via comando
 
 	$ {jboss.dir}\bin\standalone.[bat|sh]
 
-### ================================================== ##
 ### Uso da API: ponto de interese
-### ================================================== ##
+
  Servico 1: Salvar novo ponto de interesse (POI)
  
 	 Method: POST
@@ -80,9 +77,8 @@ Parametros sao obrigatórios para exibir os locais proximos, caso um dos paramet
 	 URI: /api/pontointeresses/{id}
  
 
-### ================================================== ##
 ### Definições da aplicação
-### ================================================== ##
+
  Foi usado o JBoss Forge 2.19.2.Final para a geração do projeto
  Com modificações na parte de injecoes de codigo, optei por utilizar
  EJB3 fazendo uso de @Stateless e @Local nos Entity Beans, pois tenho maior
