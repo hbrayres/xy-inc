@@ -10,6 +10,7 @@ import javax.persistence.Version;
 import javax.xml.bind.annotation.XmlRootElement;
 
 /**
+ * Entidade da tabela PontoInteresse
  * @author heber.junior
  *
  */
@@ -23,6 +24,7 @@ public class PontoInteresse implements Serializable {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	@Column(name = "id", updatable = false, nullable = false)
 	private Long id;
+	
 	@Version
 	@Column(name = "version")
 	private int version;
