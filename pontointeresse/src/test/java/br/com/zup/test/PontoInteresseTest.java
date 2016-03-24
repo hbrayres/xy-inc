@@ -28,7 +28,7 @@ import org.mockito.Mock;
 import org.mockito.Mockito;
 import org.mockito.runners.MockitoJUnitRunner;
 
-import br.com.zup.contoller.business.PontoInteresseBusinessImpl;
+import br.com.zup.controller.business.PontoInteresseBusinessImpl;
 import br.com.zup.controller.dao.PontoInteresseDao;
 import br.com.zup.controller.facade.FacadeImpl;
 import br.com.zup.model.entity.PontoInteresse;

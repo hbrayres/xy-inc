@@ -15,10 +15,23 @@
  * software and documents. This publication and the contents hereof are subject
  * to change without notice.
  */
-package br.com.zup.util;
+package br.com.zup.controller.business;
 
-public class Constantes {
+import java.util.List;
 
-    public static final String MSG_ERR_NEGATIVO = "Não é possível cadastrar uma coordenada negativa";
-    
+import javax.ejb.Local;
+
+import br.com.zup.model.entity.PontoInteresse;
+
+@Local
+public interface PontoInteresseBusiness {
+
+    void salvar(final PontoInteresse entity) throws Exception;
+
+    PontoInteresse getById(final Long id);
+
+    void delete(final Long id);
+
+    List<PontoInteresse> listarPontos(final Integer posicaoInicial, final Integer maxResult, final Integer coordX,
+	    final Integer coordY, final Integer dMax);
 }

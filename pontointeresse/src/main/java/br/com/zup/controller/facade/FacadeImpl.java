@@ -22,7 +22,7 @@ import java.util.List;
 import javax.ejb.EJB;
 import javax.ejb.Stateless;
 
-import br.com.zup.contoller.business.PontoInteresseBusiness;
+import br.com.zup.controller.business.PontoInteresseBusiness;
 import br.com.zup.model.entity.PontoInteresse;
 
 @Stateless
