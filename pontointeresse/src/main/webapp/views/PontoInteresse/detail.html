@@ -1,0 +1,42 @@
+<header ng-switch on="$location.path().indexOf('/PontoInteresses/new') > -1">
+    <h3 ng-switch-when="true">Cirar um novo Ponto de Interesse</h3>
+    <h3 ng-switch-when="false">Visualizar ou Editar Ponto de Interesse</h3>
+</header>
+<form id="PontoInteresseForm" name="PontoInteresseForm" class="form-horizontal" role="form">
+    
+
+    <div class="form-group" ng-class="{'has-error': PontoInteresseForm.nome.$invalid}">
+        <label for="nome" class="col-sm-2 control-label">Nome</label>
+        <div id="nomeControls" class="col-sm-10">
+            <input id="nome" name="nome" type="text" required class="form-control" ng-model="pontoInteresse.nome" placeholder="Nome do ponto de interesse"></input>
+            <span class="help-block error" ng-show="PontoInteresseForm.nome.$error.required">Obrigatorio</span> 
+        </div>
+    </div>
+
+    <div class="form-group" ng-class="{'has-error': PontoInteresseForm.coordX.$invalid}">
+        <label for="coordX" class="col-sm-2 control-label">Coordenada X</label>
+        <div id="coordXControls" class="col-sm-10">
+            <input id="coordX" name="coordX" type="number" required class="form-control" ng-model="pontoInteresse.coordX" placeholder="Coordenada X do ponto de interesse"></input>
+            <span class="help-block error" ng-show="PontoInteresseForm.coordX.$error.required">Obrigatorio</span> 
+            <span class="help-block error" ng-show="PontoInteresseForm.coordX.$error.number">Permitido apenas numero</span>
+        </div>
+    </div>
+
+    <div class="form-group" ng-class="{'has-error': PontoInteresseForm.coordY.$invalid}">
+        <label for="coordY" class="col-sm-2 control-label">Coordenada Y</label>
+        <div id="coordYControls" class="col-sm-10">
+            <input id="coordY" name="coordY" type="number" required class="form-control" ng-model="pontoInteresse.coordY" placeholder="Coordenada Y do ponto de interesse"></input>
+            <span class="help-block error" ng-show="PontoInteresseForm.coordY.$error.required">Obrigatorio</span> 
+            <span class="help-block error" ng-show="PontoInteresseForm.coordY.$error.number">Permitido apenas numero</span>
+        </div>
+    </div>
+
+
+    <div class="form-group">
+        <div class="col-sm-offset-2 col-sm-10">
+            <button id="savePontoInteresse" name="savePontoInteresse" class="btn btn-primary" ng-disabled="isClean() || PontoInteresseForm.$invalid" ng-click="save()"><span class="glyphicon glyphicon-ok-sign"></span> Salvar</button>
+            <button id="cancel" name="cancel" class="btn btn-default" ng-click="cancel()"><span class="glyphicon glyphicon-remove-sign"></span> Cancelar</button>
+            <button id="deletePontoInteresse" name="deletePontoInteresse" class="btn btn-danger" ng-show="pontoInteresse.id" ng-click="remove()"><span class="glyphicon glyphicon-trash"></span> Deletar</button>
+        </div>
+    </div>
+</form>

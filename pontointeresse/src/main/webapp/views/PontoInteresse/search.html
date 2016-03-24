@@ -1,0 +1,78 @@
+<div class="form-horizontal">
+    <h3>Criar Novo Ponto de Interesse</h3>
+    <div class="form-group">
+        <div class="col-md-offset-2 col-sm-2">
+            <a id="Create" name="Create" class="btn btn-primary" href="#/PontoInteresses/new"><span class="glyphicon glyphicon-plus-sign"></span> Novo</a>
+        </div>
+    </div>
+</div>
+<hr/>
+<div>
+    <h3>Pesquisa Pontos de Interesses</h3>
+    <form id="PontoInteresseSearch" class="form-horizontal">
+        
+
+    <div class="form-group">
+        <label for="nome" class="col-sm-2 control-label">Nome</label>
+        <div class="col-sm-10">
+            <input id="nome" name="nome" class="form-control" type="text" ng-model="search.nome" placeholder="Nome do ponto de interesse"></input>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label for="coordX" class="col-sm-2 control-label">Coordenada X</label>
+        <div class="col-sm-10">
+            <input id="coordX" name="coordX" class="form-control" type="text" ng-model="search.coordX" placeholder="Coordenada X do ponto de interesse"></input>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label for="coordY" class="col-sm-2 control-label">Coordenada Y</label>
+        <div class="col-sm-10">
+            <input id="coordY" name="coordY" class="form-control" type="text" ng-model="search.coordY" placeholder="Coordenada Y do ponto de interesse"></input>
+        </div>
+    </div>
+
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-sm-10">
+                <a id="Search" name="Search" class="btn btn-primary" ng-click="performSearch()"><span class="glyphicon glyphicon-search"></span> Pesquisar</a>
+            </div>
+        </div>
+    </form>
+</div>
+<div id="search-results">
+        <div class="table-responsive">
+        <table class="table table-responsive table-bordered table-striped clearfix">
+            <thead>
+                <tr>
+                    <th>Nome</th>
+                    <th>Coordenada X</th>
+                    <th>Coordenada Y</th>
+                </tr>
+            </thead>
+            <tbody id="search-results-body">
+                <tr ng-repeat="result in filteredResults | startFrom:currentPage*pageSize | limitTo:pageSize">
+                    <td><a href="#/PontoInteresses/edit/{{result.id}}">{{result.nome}}</a></td>
+                    <td><a href="#/PontoInteresses/edit/{{result.id}}">{{result.coordX}}</a></td>
+                    <td><a href="#/PontoInteresses/edit/{{result.id}}">{{result.coordY}}</a></td>
+                </tr>
+            </tbody>
+        </table>
+        
+        <span>Quantidade de registros: {{filteredResults.length}}</span>
+    </div>
+
+        <ul class="pagination pagination-centered">
+        <li ng-class="{disabled:currentPage == 0}">
+            <a id="prev" href ng-click="previous()">«</a>
+        </li>
+        <li ng-repeat="n in pageRange" ng-class="{active:currentPage == n}" ng-click="setPage(n)">
+            <a href ng-bind="n + 1">1</a>
+        </li>
+        <li ng-class="{disabled: currentPage == (numberOfPages() - 1)}">
+            <a id="next" href ng-click="next()">»</a>
+        </li>
+    </ul>
+
+</div>
